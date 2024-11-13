@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        sky: "rgb(46, 182, 232)",
+        lightBlue : 'rgb(185, 216, 243)',
+        darkCerulean: 'rgb(4, 78, 131)',
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontWeight: {
+        780: '795', 
       },
     },
   },

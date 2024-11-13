@@ -1,6 +1,12 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import image from '../Assets/logo.png'
+import menuBar from '../Assets/menu.png'
+import cross from '../Assets/close.png'
+import Link from 'next/link'
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,8 +34,32 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-      </body>
-    </html>
+      <div className="sticky top-0 z-50">
+          <div className="  px-4 h-20 bg-darkCerulean flex justify-between items-center z-10 sm:px-14 2xl:px-44" >
+
+            <Image src={image} alt="logo" className="mr-12 w-auto h-20 -mb-20 lg:h-28 " />
+            <h1 className="hidden lg:block lg:text-[1.20rem] lg:font-780 lg:text-lightBlue lg:mr-14 lg:shadow-text ">Tuition Free Education Program on Latest Technologies</h1>
+            <h1 className="block text-[1.20rem] font-780 text-lightBlue shadow-text lg:hidden">Tuition Free Programe</h1>
+            <ul className=" hidden lg:flex  justify-between   text-white md:gap-6 lg:gap-10" >
+              <li className=" cursor-pointer"><Link href={'/'}>Home</Link></li>
+              <li className=" cursor-pointer"><Link href={'./Apply'}>Apply</Link></li>
+              <li className=" cursor-pointer"><Link href={'./Jobs'}>Jobs</Link></li>
+              <li className=" cursor-pointer"><Link href={'./loading'}>Loading</Link></li>
+              <li  className=" cursor-pointer"><Link href={'./Jobss'}>Error</Link></li>
+            </ul>
+            <button>
+                 <Image src={menuBar} alt="menubar" className="block  w-8 lg:hidden"/>
+            </button>
+
+           
+
+          </div>
+          </div>
+
+          {children}
+        </body>
+    </html>  
   );
-}
+  };
+
+

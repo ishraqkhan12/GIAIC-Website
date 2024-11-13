@@ -25,3 +25,39 @@ body {
     text-wrap: balance;
   }
 }
+
+.shadow-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Horizontal offset, Vertical offset, Blur radius, Color */
+}
+
+
+
+/* styles/globals.css or your component CSS file */
+.bg-house {
+  position: relative; /* To position the pseudo-element correctly */
+  overflow: hidden; /* Ensure the pseudo-element stays within the bounds */
+}
+
+.bg-house::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../Assets/bg_house.jpg'); /* Adjust the path accordingly */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Set your desired opacity here */
+  z-index: 0; /* Send the pseudo-element behind the content */
+}
+
+.bg-house > * {
+  position: relative; /* Bring child elements above the pseudo-element */
+  z-index: 1; /* Ensure child elements are above the background */
+}
+
+
+
+
+
